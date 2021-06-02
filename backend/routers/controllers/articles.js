@@ -18,6 +18,18 @@ const createArticles = (req, res) => {
     });
 };
 
+const getAllArticles = (req, res) => {
+  aticles
+    .find({})
+    .then((resulte) => {
+      res.json(resulte);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
 module.exports = {
   createArticles,
+  getAllArticles,
 };
