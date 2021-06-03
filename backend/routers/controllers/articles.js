@@ -43,8 +43,29 @@ const getArticlesById = (req, res) => {
     });
 };
 
+
+const updateArticlesById = (req,res) =>{
+  const _id = req.params.id;
+  const { title, description, img } = req.body;
+  articles
+  .findOneAndUpdate(
+    { _id },
+    { title, description, img },
+    { new: true }
+  )
+  .then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    res.send(err);
+  });
+
+}
+
+
 module.exports = {
   createNewArticles,
   getAllArticles,
   getArticlesById,
+  updateArticlesById
 };
