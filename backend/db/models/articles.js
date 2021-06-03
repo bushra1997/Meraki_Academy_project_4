@@ -8,5 +8,5 @@ const articleSchema = new mongoose.Schema({
     img: {type: String , required :true }, 
     comments: { type: mongoose.Schema.Types.ObjectId, ref: 'Comments' },
 })
-
-module.exports = mongoose.model("Article", articleSchema);
+const articles = mongoose.model("Article", articleSchema);
+module.exports= articles
