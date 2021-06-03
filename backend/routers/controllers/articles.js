@@ -1,10 +1,8 @@
 const articles = require("../../db/models/articles");
 
-
 const createNewArticles = (req, res) => {
   const { title, description, img } = req.body;
   const newArticles = new articles({
-
     title,
     description,
     img,
@@ -32,11 +30,21 @@ const getAllArticles = (req, res) => {
     });
 };
 
+const getArticlesById = (req, res) => {
+  const id = req.params.id;
+  articles
+    .findOne({ _id: id })
 
-
+    .then((resulte) => {
+      res.json(resulte);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
 
 module.exports = {
- createNewArticles,
- getAllArticles
-  
+  createNewArticles,
+  getAllArticles,
+  getArticlesById,
 };
