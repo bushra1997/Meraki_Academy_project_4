@@ -62,10 +62,24 @@ const updateArticlesById = (req,res) =>{
 
 }
 
+const deleteArticleById = (req,res)=> {
+  const _id = req.params.id;
+  articles
+  .findByIdAndRemove({_id})
+  .then((result) => {
+    res.send(result);
+  })
+  .catch((err) => {
+    res.send(err);
+  });
+
+}
+
 
 module.exports = {
   createNewArticles,
   getAllArticles,
   getArticlesById,
-  updateArticlesById
+  updateArticlesById,
+  deleteArticleById
 };
