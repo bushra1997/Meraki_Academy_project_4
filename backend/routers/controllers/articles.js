@@ -18,9 +18,22 @@ const createNewArticles = (req, res) => {
     });
 };
 
+const getAllArticles = (req, res) => {
+  articles
+    .find({})
+
+    .then((resulte) => {
+      res.json(resulte);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+};
+
 
 
 module.exports = {
  createNewArticles,
+ getAllArticles
   
 };
