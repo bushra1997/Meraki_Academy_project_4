@@ -1,8 +1,13 @@
+
 const express = require("express");
 const cors = require("cors");
-// const db = require('./db/db');
 const bodyParser = require("body-parser");
 const { check, validationResult } = require("express-validator");
+
+const db = require('./db/db');
+
+const articlesRouter = require("./routers/routes/articles")
+
 
 const app = express();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -16,10 +21,8 @@ app.use(cors());
 
 //app routers
 // app.use('/users', usersRouter);
-// app.use('/articles', articlesRouter);
-// app.use(authRouter);
-// app.use(commentsRouter);
-// app.use(roleRouter);
+
+
 
 // Set templating engine
 app.set("view engine", "ejs");
@@ -32,6 +35,13 @@ app.get("", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 });
+
+app.use('/articles', articlesRouter);
+
+// app.use(authRouter);
+// app.use(commentsRouter);
+// app.use(roleRouter);
+
 
 app.post(
   "/register",
