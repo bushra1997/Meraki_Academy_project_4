@@ -8,6 +8,7 @@ const { check, validationResult } = require("express-validator");
 const db = require('./db/db');
 
 const articlesRouter = require("./routers/routes/articles")
+const userDataRouter = require("./routers/routes/userdata")
 
 
 const app = express();
@@ -46,6 +47,8 @@ app.get("/register", (req, res) => {
 });
 
 app.use('/articles', articlesRouter);
+app.use('/userData', userDataRouter);
+
 
 // app.use(authRouter);
 // app.use(commentsRouter);
