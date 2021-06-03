@@ -5,5 +5,5 @@ const articlesSchema = new mongoose.Schema({
   description: { type: String },
   imge: { type: String },
 });
-const articles = mongoose.model("aticles", articlesSchema);
+const articles = mongoose.model("articles", articlesSchema);
 module.exports = articles;

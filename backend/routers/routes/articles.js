@@ -4,6 +4,8 @@ const articlesRouter = express.Router();
 
 articlesRouter.post("/", createArticles);
 articlesRouter.get("/", getAllArticles);
+// articlesRouter.get("/:id", getArticlesById);
+
 
 
 module.exports = articlesRouter;
