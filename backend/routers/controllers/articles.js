@@ -1,8 +1,10 @@
 const articles = require("../../db/models/articles");
 
+
 const createNewArticles = (req, res) => {
   const { title, description, img } = req.body;
   const newArticles = new articles({
+
     title,
     description,
     img,
@@ -29,6 +31,7 @@ const getAllArticles = (req, res) => {
       res.json(err);
     });
 };
+
 
 
 

@@ -1,4 +1,5 @@
 
+
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -11,10 +12,18 @@ const articlesRouter = require("./routers/routes/articles")
 
 const app = express();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 //routers
 
 //built-in middlewares
 app.use(express.json());
+
+
+
+
+
+
+
 
 //third-party middleware
 app.use(cors());
