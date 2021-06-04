@@ -17,7 +17,7 @@ const createNewUserData = (req,res) => {
 };
 
 const getUserDataById_Number = (req,res) =>{
-    const id_Number = req.params.id_Number;
+    const id_Number = req.body.id_Number
     userData
     .findOne({id_Number})
     .then((result) => {

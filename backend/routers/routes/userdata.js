@@ -5,7 +5,7 @@ const userDataRouter = express.Router();
 
 
 userDataRouter.post("/",createNewUserData)
-userDataRouter.get("/:id_Number",getUserDataById_Number)
+userDataRouter.get("/",getUserDataById_Number)
 
 
 module.exports= userDataRouter;
