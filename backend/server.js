@@ -9,6 +9,7 @@ const db = require('./db/db');
 
 const articlesRouter = require("./routers/routes/articles")
 const userDataRouter = require("./routers/routes/userdata")
+const commentRouter=require("./routers/routes/comments")
 
 
 const app = express();
@@ -35,7 +36,7 @@ app.use(cors());
 app.use('/articles', articlesRouter);
 app.use('/userData', userDataRouter);
 
-
+app.use("/articles/:id/comments",commentRouter);
 // app.use(authRouter);
 // app.use(commentsRouter);
 // app.use(roleRouter);
