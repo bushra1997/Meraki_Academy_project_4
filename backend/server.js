@@ -37,6 +37,8 @@ app.use('/articles', articlesRouter);
 app.use('/userData', userDataRouter);
 
 app.use("/articles/:id/comments",commentRouter);
+
+
 // app.use(authRouter);
 // app.use(commentsRouter);
 // app.use(roleRouter);
