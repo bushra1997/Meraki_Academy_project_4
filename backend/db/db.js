@@ -9,7 +9,7 @@ const options = {
 };
 
 // connecting mongoose
-mongoose.connect(process.env.DB_URI, options).then(
+mongoose.connect("mongodb://localhost:27017/Project4", options).then(
 	() => {
 		console.log('DB Ready To Use');
 	},
