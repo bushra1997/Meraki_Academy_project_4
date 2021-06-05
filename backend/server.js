@@ -32,6 +32,13 @@ app.use(cors());
 //app routers
 // app.use('/users', usersRouter);
 
+app.use('/articles', articlesRouter);
+app.use('/userData', userDataRouter);
+
+
+// app.use(authRouter);
+// app.use(commentsRouter);
+// app.use(roleRouter);
 
 
 // Set templating engine
@@ -46,13 +53,7 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
-app.use('/articles', articlesRouter);
-app.use('/userData', userDataRouter);
 
-
-// app.use(authRouter);
-// app.use(commentsRouter);
-// app.use(roleRouter);
 
 
 app.post(

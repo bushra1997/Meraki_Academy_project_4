@@ -22,8 +22,8 @@ const getAllArticles = (req, res) => {
   articles
     .find({})
 
-    .then((resulte) => {
-      res.json(resulte);
+    .then((result) => {
+      res.json(result);
     })
     .catch((err) => {
       res.json(err);
@@ -35,8 +35,8 @@ const getArticlesById = (req, res) => {
   articles
     .findOne({ _id: id })
 
-    .then((resulte) => {
-      res.json(resulte);
+    .then((result) => {
+      res.json(result);
     })
     .catch((err) => {
       res.json(err);
@@ -46,11 +46,11 @@ const getArticlesById = (req, res) => {
 
 const updateArticlesById = (req,res) =>{
   const _id = req.params.id;
-  const { title, description, img } = req.body;
+
   articles
   .findOneAndUpdate(
     { _id },
-    { title, description, img },
+    req.body,
     { new: true }
   )
   .then((result) => {
@@ -67,7 +67,7 @@ const deleteArticleById = (req,res)=> {
   articles
   .findByIdAndRemove({_id})
   .then((result) => {
-    res.send(result);
+    res.send("Deleted Complete");
   })
   .catch((err) => {
     res.send(err);
